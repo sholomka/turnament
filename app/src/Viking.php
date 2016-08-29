@@ -5,76 +5,17 @@ namespace Tournament;
  * Class Viking
  * @package Tournament
  */
-class Viking
+class Viking extends Fighter
 {
     /**
-     * Damage
-     * @var int
+     * Viking constructor.
+     * @param string $objectType
      */
-    private $damage = 6;
-
-    /**
-     *Total hit points
-     * @var int
-     */
-    private $totalHitPoints = 120;
-
-    /**
-     * Current hit points
-     * @var
-     */
-    private $currentHitPoints;
-
-    /**
-     * Equipment type
-     * @var array
-     */
-    private $equipType = [];
-
-    /**
-     * Object type
-     * @var string
-     */
-    private $objectType = '';
-
-    /**
-     * Getter
-     * @param $name
-     * @return mixed
-     */
-    public function __get($name)
+    public function __construct($objectType = '')
     {
-        return $this->$name;
+        parent::__construct($objectType);
+        $this->damage = 6;
+        $this->totalHitPoints = 120;
     }
 
-    /**
-     * Setter
-     * @param $name
-     * @param $value
-     */
-    public function __set($name, $value)
-    {
-        $this->$name = $value;
-    }
-
-    /**
-     * Return current hit points
-     * @return mixed
-     */
-    public function hitPoints()
-    {
-        return $this->currentHitPoints;
-    }
-
-    /**
-     * Equipment
-     * @param $equipType
-     * @return $this
-     */
-    public function equip($equipType)
-    {
-        $this->equipType[] = $equipType;
-
-        return $this;
-    }
 }
