@@ -13,7 +13,7 @@ class VikingFightingStrategy extends FightingStrategy
      * @param $opponent
      */
 
-     public function engage(Fighter $fighter, $opponent) {
+     public function engage(Fighter $fighter, Fighter $opponent) {
          for ($vikingHitPoints = $opponent->totalHitPoints, $swordsmanHitPoints = $fighter->totalHitPoints ; ; ) {
              $vikingHitPoints -= $fighter->damage;
              $swordsmanHitPoints -= $opponent->damage;

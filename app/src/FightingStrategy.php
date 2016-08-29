@@ -14,5 +14,5 @@ abstract class FightingStrategy
      * @param $opponent
      * @return mixed
      */
-    abstract function engage(Fighter $fighter, $opponent);
+    abstract function engage(Fighter $fighter, Fighter $opponent);
 }

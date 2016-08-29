@@ -12,7 +12,7 @@ class HighlanderVeteranFightingStrategy
      * @param Fighter $fighter
      * @param $opponent
      */
-    public function engage(Fighter $fighter, $opponent) {
+    public function engage(Fighter $fighter, Fighter $opponent) {
         for ($highlanderVeteranHitPoints = $opponent->totalHitPoints, $swordsmanHitPoints = $fighter->totalHitPoints, $iteration = 0 ; ; $iteration++) {
             $highlanderVeteranHitPoints -= ($iteration < 2 ? $fighter->damage + 20 : $fighter->damage);
             $swordsmanHitPoints -= ($iteration % 3 == 0) ? ($highlanderVeteranHitPoints < $fighter->berserkPercent ? $opponent->damage * 2 : $opponent->damage) : 0;

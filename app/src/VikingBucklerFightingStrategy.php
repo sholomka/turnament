@@ -12,7 +12,7 @@ class VikingBucklerFightingStrategy
      * @param Fighter $fighter
      * @param $opponent
      */
-    public function engage(Fighter $fighter, $opponent)
+    public function engage(Fighter $fighter, Fighter $opponent)
     {
         for ($vikingHitPoints = $opponent->totalHitPoints, $swordsmanHitPoints = $fighter->totalHitPoints, $iteration = 0 ; ; $iteration++) {
             $vikingHitPoints -= ($iteration % 2 == 0) ? $fighter->damage : 0;
