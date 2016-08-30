@@ -58,6 +58,8 @@ abstract class Fighter
         $this->objectType = $objectType;
     }
 
+    const OBJECT_TYPE_VETERAN = 'Veteran';
+
     /**
      * Engage
      * @param $opponent
@@ -68,7 +70,7 @@ abstract class Fighter
             $opponent->damage -= 3;
         }
 
-        if ($opponent->objectType == 'Veteran') {
+        if ($opponent->objectType == Fighter::OBJECT_TYPE_VETERAN) {
             $this->berserkPercent = $opponent->totalHitPoints * 30 / 100;
         }
 

@@ -23,9 +23,7 @@ class FightingStrategyFactory
      */
     public static function factory(Fighter $fighter, Fighter $opponent)
     {
-        $opponentName = get_class($opponent);
-
-        if ($opponentName == 'Tournament\Viking') {
+        if ($opponent instanceof Viking) {
             if (in_array('buckler', $fighter->equipType) && in_array('buckler', $opponent->equipType)) {
                 self::$object = new VikingBucklerFightingStrategy();
             } else {
@@ -33,7 +31,7 @@ class FightingStrategyFactory
             }
         }
 
-        if ($opponentName == 'Tournament\Highlander') {
+        if ($opponent instanceof Highlander) {
             if (!empty($fighter->objectType) && !empty($opponent->objectType)) {
                 self::$object = new HighlanderVeteranFightingStrategy();
             } else {
